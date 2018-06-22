@@ -214,6 +214,22 @@ table.hugo-list {
 
 /*
  **
+ ** 404
+ **
+ **/
+
+.page-not-found {
+  margin-top: 60px;
+}
+
+.page-not-found h1 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+/*
+ **
  ** CSS media queries
  **
  **/
