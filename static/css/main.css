@@ -229,6 +229,16 @@ table.hugo-list {
     text-align: center;
   }
 
+  nav a,
+  .hugo-list a {
+    line-height: 40px;
+  }
+
+  .hugo-list a {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
   nav .title {
     margin: 0;
   }
