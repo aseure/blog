@@ -1,0 +1,5 @@
+baseurl            = "/"
+languageCode       = "en-us"
+title              = "Anthony Seure"
+pygmentsStyle      = "manni"
+pygmentsCodeFences = true

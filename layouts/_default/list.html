@@ -1,0 +1,5 @@
+{{ define "main" }}
+{{ .Scratch.Set "title" .Title }}
+{{ .Scratch.Set "section" .Section }}
+{{ partial "list.html" . }}
+{{ end }}

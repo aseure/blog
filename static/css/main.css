@@ -1,0 +1,235 @@
+/*
+**
+** General
+**
+**/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  background: rgba(242, 245, 246, 100);
+  color: rgba(38, 52, 74, 7);
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0px auto;
+  margin-bottom: 50px;
+  width: 600px;
+}
+
+
+ul {
+  list-style-type: none;
+}
+
+a,
+a:visited {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a, li, p {
+  line-height: 20px
+}
+
+/*
+**
+** Navigation bar
+**
+**/
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+}
+
+nav .title {
+  margin-right: auto;
+}
+
+nav a {
+  font-size: 1.2em;
+  font-weight: 600;
+  padding: 5px 10px;
+}
+
+nav a,
+.hugo-list a {
+  -webkit-transition: background .15s ease-out;
+  -webkit-transition: color .15s ease-out;
+  border-radius: 4px;
+  color: rgba(38, 52, 74, 0.5);
+}
+
+nav a:hover,
+.hugo-list a:hover,
+nav a:focus,
+.hugo-list a:focus {
+  background: rgba(4, 15, 26, 0.05);
+  color: rgba(38, 52, 74, 0.7);
+  outline: 0;
+}
+
+/*
+**
+** Top separator
+**
+**/
+
+hr {
+  clear: both;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  border: 0;
+  border-bottom: 1px solid rgba(38, 52, 74, 0.5);
+}
+
+/*
+**
+** Hugo "single" pages
+**
+**/
+
+.hugo-single .title {
+  text-align: center;
+  margin: 60px 0;
+}
+
+.hugo-single p {
+  margin: 20px 0;
+}
+
+.hugo-single a {
+  color: #5468ff;
+  border-radius: 3px;
+}
+
+.hugo-single a:hover,
+.hugo-single a:focus {
+  text-decoration: underline;
+  outline: 0;
+}
+
+.hugo-single blockquote {
+  border-left: 5px solid rgba(38, 52, 74, 0.5);
+  color: rgba(38, 52, 74, 0.5);
+  font-size 1.4em;
+  font-style: italic;
+  margin-left: 20px;
+  padding: 10px 20px;
+}
+
+.hugo-single blockquote p {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+
+.hugo-single blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.hugo-single h2,
+.hugo-single h3,
+.hugo-single h4,
+.hugo-single h5,
+.hugo-single h6 {
+  margin: 20px 0;
+}
+
+.hugo-single ul {
+  list-style-type: disc;
+  list-style-position: outside;
+  margin-left: 20px;
+  padding-left: 20px;
+}
+
+.hugo-single img {
+  height: auto;
+  width: 100%;
+}
+
+code {
+  font-family: "Monaco";
+  font-size: 0.8em;
+}
+
+p code,
+li code,
+pre {
+  border-radius: 4px;
+  border: 1px solid rgba(38, 52, 74, 0.5);
+  background-color: white;
+}
+
+p code,
+li code {
+  padding: 0 4px;
+}
+
+pre {
+  margin: 20px;
+  padding: 10px;
+}
+
+/*
+ **
+ ** Hugo "list" pages
+ **
+ **/
+
+.hugo-list-title {
+  text-align: center;
+  margin: 60px 0;
+}
+
+table.hugo-list {
+  border-spacing: 0 10px;
+}
+
+.hugo-list tr {
+  vertical-align: middle;
+}
+
+.hugo-list td.date {
+  color: rgba(38, 52, 74, 0.5);
+  min-width: 90px;
+  border-right: 1px solid rgba(38, 52, 74, 0.5);
+}
+
+.hugo-list td.title {
+  padding-left: 8px;
+}
+
+.hugo-list td.title a {
+  padding: 4px;
+}
+
+/*
+ **
+ ** CSS media queries
+ **
+ **/
+
+@media only screen and (max-width: 700px) {
+  body {
+    width: 90%;
+  }
+
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav .title {
+    margin: 0;
+  }
+}
