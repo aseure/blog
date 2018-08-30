@@ -8,7 +8,11 @@
     <script src="{{ "js/main.js" | absURL }}"></script>
   </head>
   <body>
+    <nav>
     {{ partial "nav.html" . }}
+    </nav>
+    <main>
     {{- block "main" . }}{{- end }}
+    </main>
   </body>
 </html>

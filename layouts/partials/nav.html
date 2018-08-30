@@ -1,4 +1,4 @@
-<nav>
+<div class="menu">
   <a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}" class="title">{{ .Site.Title }}</a>
   <!--{{ $currentPage := . }}-->
   {{ range .Site.Menus.main }}
@@ -8,6 +8,4 @@
   {{ range .Site.Sections }}
   <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
   {{ end }}
-</nav>
-
-<hr>
+</div>

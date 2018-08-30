@@ -10,20 +10,19 @@
 }
 
 html {
-  background: rgba(242, 245, 246, 100);
-  color: rgba(38, 52, 74, 7);
+  background: white;
+  color: black;
   font-family: "Helvetica Neue", sans-serif;
   font-size: 1em;
   font-weight: normal;
   overflow-y: scroll;
 }
 
-body {
+main {
+  width: 700px;
   margin: 0px auto;
   margin-bottom: 50px;
-  width: 600px;
 }
-
 
 ul {
   list-style-type: none;
@@ -31,9 +30,15 @@ ul {
 
 a,
 a:visited {
-  color: inherit;
+  color: #da271e;
   cursor: pointer;
   text-decoration: none;
+}
+
+a:hover {
+  color: #da271e;
+  outline: 0;
+  text-decoration: underline;
 }
 
 a, li, p {
@@ -47,50 +52,39 @@ a, li, p {
 **/
 
 nav {
+  background: #da271e;
+  color: white;
+}
+
+nav .menu {
+  width: 700px;
+  margin: 0 auto;
+  padding: 10px 0;
   display: flex;
   justify-content: flex-end;
-  margin: 10px 0;
 }
+
 
 nav .title {
   margin-right: auto;
 }
 
-nav a {
+nav a,
+nav a:visited {
+  -webkit-transition: color .1s ease-out, background .1s ease-out;
+  border-radius: 2px;
+  color: white;
   font-size: 1.2em;
   font-weight: 600;
   padding: 5px 10px;
 }
 
-nav a,
-.hugo-list a {
-  -webkit-transition: background .15s ease-out;
-  -webkit-transition: color .15s ease-out;
-  border-radius: 4px;
-  color: rgba(38, 52, 74, 0.5);
-}
-
 nav a:hover,
-nav a:focus,
-.hugo-list a:hover,
-.hugo-list a:focus {
-  background: rgba(4, 15, 26, 0.05);
-  color: rgba(38, 52, 74, 0.7);
+nav a:focus {
+  background: white;
+  color: #da271e;
   outline: 0;
-}
-
-/*
-**
-** Top separator
-**
-**/
-
-hr {
-  border: 0;
-  border-bottom: 1px solid rgba(38, 52, 74, 0.5);
-  clear: both;
-  margin-bottom: 10px;
-  padding-top: 10px;
+  text-decoration: none;
 }
 
 /*
@@ -108,20 +102,8 @@ hr {
   margin: 20px 0;
 }
 
-.hugo-single a {
-  color: #5468ff;
-  border-radius: 3px;
-}
-
-.hugo-single a:hover,
-.hugo-single a:focus {
-  outline: 0;
-  text-decoration: underline;
-}
-
 .hugo-single blockquote {
-  border-left: 5px solid rgba(38, 52, 74, 0.5);
-  color: rgba(38, 52, 74, 0.5);
+  border-left: 5px solid #da271e;
   font-size 1.4em;
   font-style: italic;
   margin-left: 20px;
@@ -199,8 +181,7 @@ table.hugo-list {
 }
 
 .hugo-list td.date {
-  border-right: 1px solid rgba(38, 52, 74, 0.5);
-  color: rgba(38, 52, 74, 0.5);
+  border-right: 1px solid black;
   min-width: 90px;
 }
 
@@ -235,17 +216,19 @@ table.hugo-list {
  **/
 
 @media only screen and (max-width: 700px) {
-  body {
+  nav .menu,
+  main {
     width: 90%;
   }
 
-  nav {
+  nav .menu {
     flex-direction: column;
     text-align: center;
   }
 
   nav a,
   .hugo-list a {
+    width: 100%;
     line-height: 40px;
   }
 
