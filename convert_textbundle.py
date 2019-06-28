@@ -64,10 +64,14 @@ shutil.copy(
     os.path.join(input_textbundle, 'text.md'),
     output_post_markdown,
 )
-shutil.copytree(
-    os.path.join(input_textbundle, 'assets'),
-    os.path.join(output_post_dir, 'assets'),
-)
+
+input_assets_dir = os.path.join(input_textbundle, 'assets')
+
+if dir_exists(input_assets_dir):
+    shutil.copytree(
+        input_assets_dir,
+        os.path.join(output_post_dir, 'assets'),
+    )
 
 front_matter = ('---'                    +  '\n' +
                'title: "' + article_name + '"\n' +
