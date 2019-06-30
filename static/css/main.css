@@ -165,7 +165,7 @@ h1.title {
 p code,
 li code,
 pre code {
-  font-family: Consolas;
+  font-family: Consolas, Monaco, monospace;
   font-size: 18px;
 }
 
