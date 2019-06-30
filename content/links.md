@@ -1,6 +1,5 @@
 ---
 title: "Links"
-date: 2017-11-22T16:01:45+01:00
 menu: main
 ---
 

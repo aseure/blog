@@ -1,6 +1,5 @@
 ---
 title: "About"
-date: 2017-11-22T16:00:03+01:00
 menu: main
 ---
 
