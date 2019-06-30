@@ -1,5 +1,16 @@
 /*
 **
+** Colors
+**
+** Grey:             4b545c
+** Light grey:       e6e9eb
+** Main color:       c4050f 
+** Light main color: FEEBEC
+**
+**/
+
+/*
+**
 ** General
 **
 **/
@@ -11,17 +22,16 @@
 
 html {
   background: white;
-  color: black;
-  font-family: "Helvetica Neue", sans-serif;
+  color: #4b545c;
+  font-family: sans-serif;
   font-size: 1em;
   font-weight: normal;
   overflow-y: scroll;
 }
 
 main {
-  width: 700px;
-  margin: 0px auto;
-  margin-bottom: 50px;
+  width: 800px;
+  margin: 50px auto;
 }
 
 ul {
@@ -30,19 +40,23 @@ ul {
 
 a,
 a:visited {
-  color: #da271e;
+  -webkit-transition: color .1s ease-out, background .1s ease-out;
+  border-radius: 5px;
+  color: #c4050f;
   cursor: pointer;
   text-decoration: none;
+  padding: 2px 1px;
 }
 
-a:hover {
-  color: #da271e;
+a:hover,
+a:focus {
   outline: 0;
-  text-decoration: underline;
+  background-color: #FEEBEC;
 }
 
-a, li, p {
-  line-height: 20px
+a, li, p, td {
+  line-height: 1.3;
+  font-size: 18px;
 }
 
 /*
@@ -52,39 +66,44 @@ a, li, p {
 **/
 
 nav {
-  background: #da271e;
-  color: white;
-}
-
-nav .menu {
-  width: 700px;
-  margin: 0 auto;
-  padding: 10px 0;
+  width: 800px;
+  margin: 20px auto;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
 }
 
-
-nav .title {
-  margin-right: auto;
+nav a {
+  padding: 5px;
+  cursor: pointer;
 }
 
 nav a,
 nav a:visited {
-  -webkit-transition: color .1s ease-out, background .1s ease-out;
-  border-radius: 2px;
-  color: white;
-  font-size: 1.2em;
-  font-weight: 600;
-  padding: 5px 10px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-nav a:hover,
-nav a:focus {
-  background: white;
-  color: #da271e;
-  outline: 0;
-  text-decoration: none;
+nav .title a,
+nav .title a:visited {
+  color: #c4050f;
+  font-size: 2.4em;
+}
+
+nav .title a:hover,
+nav .title a:focus {
+  background-color: #FEEBEC;
+}
+
+nav .links span.slash,
+nav .links a,
+nav .links a:visited {
+  color: #4b545c;
+  font-size: 1.5em;
+}
+
+nav .links a:hover,
+nav .links a:focus {
+  background-color: #e6e9eb;
 }
 
 /*
@@ -93,9 +112,12 @@ nav a:focus {
 **
 **/
 
-.hugo-single .title {
-  margin: 60px 0;
+h1.title {
+  background-color: #FEEBEC;
+  color: #c4050f;
+  padding: 20px;
   text-align: center;
+  margin: 40px 0;
 }
 
 .hugo-single p {
@@ -103,7 +125,7 @@ nav a:focus {
 }
 
 .hugo-single blockquote {
-  border-left: 5px solid #da271e;
+  border-left: 5px solid #c4050f;
   font-size 1.4em;
   font-style: italic;
   margin-left: 20px;
@@ -125,14 +147,14 @@ nav a:focus {
 .hugo-single h4,
 .hugo-single h5,
 .hugo-single h6 {
-  margin: 20px 0;
+  margin: 40px 0;
 }
 
 .hugo-single ul {
   list-style-position: outside;
   list-style-type: disc;
   margin-left: 20px;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 .hugo-single img {
@@ -142,23 +164,17 @@ nav a:focus {
 
 p code,
 li code,
+pre code {
+  font-family: Consolas;
+  font-size: 1em;
+}
+
 pre {
-  background-color: white !important;
   border-radius: 4px;
   border: 1px solid rgba(38, 52, 74, 0.5);
-  font-family: "Monaco";
-  font-size: 0.8em;
-}
-
-p code,
-li code {
-  padding: 0 4px;
-  white-space: nowrap;
-}
-
-pre {
   margin: 20px;
   padding: 10px;
+  overflow: scroll;
 }
 
 /*
@@ -181,8 +197,9 @@ table.hugo-list {
 }
 
 .hugo-list td.date {
-  border-right: 1px solid black;
+  border-right: 1px solid #4b545c;
   min-width: 90px;
+  padding-right: 10px;
 }
 
 .hugo-list td.title {
@@ -215,29 +232,24 @@ table.hugo-list {
  **
  **/
 
-@media only screen and (max-width: 700px) {
-  nav .menu,
+@media only screen and (max-width: 850px) {
   main {
     width: 90%;
   }
 
-  nav .menu {
-    flex-direction: column;
+  nav {
+    width: 100%;
+  }
+
+  nav .title,
+  nav .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     text-align: center;
   }
 
-  nav a,
-  .hugo-list a {
-    width: 100%;
-    line-height: 40px;
-  }
-
-  .hugo-list a {
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  nav .title {
-    margin: 0;
+  nav span.slash {
+    margin: auto 0;
   }
 }

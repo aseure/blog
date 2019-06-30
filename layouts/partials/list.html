@@ -1,4 +1,6 @@
-<h1 class="main-color hugo-list-title">{{ .Scratch.Get "title" }}</h1>
+<h1 class="title">
+  {{ .Scratch.Get "title" }}
+</h1>
 <table class="hugo-list">
   {{ range where .Data.Pages.ByDate.Reverse "Section" (.Scratch.Get "section") }}
   <tr>

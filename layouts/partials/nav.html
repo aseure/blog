@@ -1,11 +1,16 @@
-<div class="menu">
-  <a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}" class="title">{{ .Site.Title }}</a>
-  <!--{{ $currentPage := . }}-->
+<span class="title">
+  <a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}">{{ .Site.Title }}</a>
+</span>
+<span class="links">
+  {{ range $i, $e := .Site.Sections }}
+  {{ if $i }}
+  <span class="slash">/</span>
+  {{ end }}
+  <a href="{{ $e.URL }}" title="{{ $e.Title }}">{{ $e.Name }}</a>
+  {{ end }}
+
   {{ range .Site.Menus.main }}
-  <!--<a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>-->
+  <span class="slash">/</span>
   <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
   {{ end }}
-  {{ range .Site.Sections }}
-  <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
-  {{ end }}
-</div>
+</span>
