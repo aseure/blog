@@ -4,7 +4,7 @@ At [Algolia](https://www.algolia.com/), I maintain open-source API clients that 
 
 ## Handle legacy fields
 
-Mapping JSON payloads and Go structures is a simple task thanks to the `encoding/json` package from the standard library. However, it may become a bit more difficult when payloads and structures do not have this 1:1 mapping anymore. Sometimes, payloads may use multiple names for the same field. Picture a JSON payload for which an attribute was set according a specific name that had to be renamed at some point.
+Mapping JSON payloads and Go structures is a simple task thanks to the `encoding/json` package from the standard library. However, it may become a bit more difficult when payloads and structures do not have this 1:1 mapping anymore. Sometimes, payloads may use multiple names for the same field. Picture a JSON payload for which an attribute was set according to a specific name that had to be renamed at some point.
 
 ```json
 // Legacy payload
