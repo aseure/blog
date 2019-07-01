@@ -111,7 +111,7 @@ After the two `json.Unmarshal` calls, all known fields have been correctly deser
 
 Having a neat public API that only exposes what is needed and documented for the end user is a utopia.
 
-They are times where your users will want or need to use undocumented parameters. Where I work, we need to handle that case for advanced features needed by power-user. Because those features may have degrade performance when used unwisely, we purportedly do not document them. Still, for those few users who know and need to use them, we have to offer them a way, through our public API to let them inject custom fields in our JSON payload. Let’s take an example here:
+They are times where your users will want or need to use undocumented parameters. Where I work, we need to handle that case for advanced features needed by power-user. Because those features may have degraded performance when used unwisely, we purportedly do not document them. Still, for those few users who know and need to use them, we have to offer them a way, through our public API to let them inject custom fields in our JSON payload. Let’s take an example here:
 
 ```go
 type Heating struct {
