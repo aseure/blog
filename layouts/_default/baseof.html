@@ -6,7 +6,6 @@
     {{ $style := resources.Get "scss/main.scss" | resources.ToCSS | resources.Minify }}
     <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
     <title>{{ .Title }}</title>
-    <script src="{{ "js/main.js" | absURL }}"></script>
   </head>
   <body>
     <nav>
