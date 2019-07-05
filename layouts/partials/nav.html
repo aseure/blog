@@ -6,7 +6,7 @@
   {{ if $i }}
   <span class="slash">/</span>
   {{ end }}
-  <a href="{{ $e.URL }}" title="{{ $e.Title }}">{{ $e.Name }}</a>
+  <a href="{{ $e.Permalink }}" title="{{ $e.Title }}">{{ $e.Name }}</a>
   {{ end }}
 
   {{ range .Site.Menus.main }}
