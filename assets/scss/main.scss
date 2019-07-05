@@ -1,13 +1,7 @@
-/*
-**
-** Colors
-**
-** Grey:             4b545c
-** Light grey:       e6e9eb
-** Main color:       c4050f
-** Light main color: FEEBEC
-**
-**/
+$grey:             #4b545c;
+$grey-light:       #e6e9eb;
+$main-color:       #c4050f;
+$main-color-light: #feebec;
 
 /*
 **
@@ -22,7 +16,7 @@
 
 html {
   background: white;
-  color: #4b545c;
+  color: $grey;
   font-family: sans-serif;
   font-size: 1em;
   font-weight: normal;
@@ -42,7 +36,7 @@ a,
 a:visited {
   -webkit-transition: color .1s ease-out, background .1s ease-out;
   border-radius: 5px;
-  color: #c4050f;
+  color: $main-color;
   cursor: pointer;
   text-decoration: none;
   padding: 2px 1px;
@@ -51,7 +45,7 @@ a:visited {
 a:hover,
 a:focus {
   outline: 0;
-  background-color: #FEEBEC;
+  background-color: $main-color-light;
 }
 
 a, li, p, td {
@@ -70,40 +64,44 @@ nav {
   margin: 20px auto;
   display: flex;
   flex-direction: column;
-}
 
-nav a {
-  padding: 5px;
-  cursor: pointer;
-}
+  a {
+    padding: 5px;
+    cursor: pointer;
+  }
 
-nav a,
-nav a:visited {
-  text-decoration: none;
-  font-weight: bold;
-}
+  a,
+  a:visited {
+    text-decoration: none;
+    font-weight: bold;
+  }
 
-nav .title a,
-nav .title a:visited {
-  color: #c4050f;
-  font-size: 2.4em;
-}
+  .title {
+    a,
+    a:visited {
+      color: $main-color;
+      font-size: 2.4em;
+    }
 
-nav .title a:hover,
-nav .title a:focus {
-  background-color: #FEEBEC;
-}
+    a:hover,
+    a:focus {
+      background-color: $main-color-light;
+    }
+  }
 
-nav .links span.slash,
-nav .links a,
-nav .links a:visited {
-  color: #4b545c;
-  font-size: 1.5em;
-}
+  .links {
+    span.slash,
+    a,
+    a:visited {
+      color: $grey;
+      font-size: 1.5em;
+    }
 
-nav .links a:hover,
-nav .links a:focus {
-  background-color: #e6e9eb;
+    a:hover,
+    a:focus {
+      background-color: $grey-light;
+    }
+  }
 }
 
 /*
@@ -113,53 +111,51 @@ nav .links a:focus {
 **/
 
 h1.title {
-  background-color: #FEEBEC;
-  color: #c4050f;
+  background-color: $main-color-light;
+  color: $main-color;
   padding: 20px;
   text-align: center;
   margin: 40px 0;
 }
 
-.hugo-single p {
-  margin: 20px 0;
-}
+.hugo-single {
+  p {
+    margin: 20px 0;
+  }
 
-.hugo-single blockquote {
-  border-left: 5px solid #c4050f;
-  font-size: 1.4em;
-  font-style: italic;
-  margin-left: 20px;
-  padding: 10px 20px;
-}
+  ul {
+    list-style-position: outside;
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 10px;
+  }
 
-.hugo-single blockquote p {
-  font-size: 1.3em;
-  margin: 0;
-  margin-bottom: 10px;
-}
+  img {
+    height: auto;
+    width: 100%;
+  }
 
-.hugo-single blockquote p:last-child {
-  margin-bottom: 0;
-}
+  h2, h3, h4, h5, h6 {
+    margin: 40px 0;
+  }
 
-.hugo-single h2,
-.hugo-single h3,
-.hugo-single h4,
-.hugo-single h5,
-.hugo-single h6 {
-  margin: 40px 0;
-}
+  blockquote {
+    border-left: 5px solid $main-color;
+    font-size: 1.4em;
+    font-style: italic;
+    margin-left: 20px;
+    padding: 10px 20px;
 
-.hugo-single ul {
-  list-style-position: outside;
-  list-style-type: disc;
-  margin-left: 20px;
-  padding-left: 10px;
-}
+    p {
+      font-size: 1.3em;
+      margin: 0;
+      margin-bottom: 10px;
+    }
 
-.hugo-single img {
-  height: auto;
-  width: 100%;
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 p code,
@@ -192,23 +188,25 @@ table.hugo-list {
   border-spacing: 0 10px;
 }
 
-.hugo-list tr {
-  vertical-align: middle;
-}
+.hugo-list {
+  tr {
+    vertical-align: middle;
+  }
 
-.hugo-list td.date {
-  font-weight: bold;
-  border-right: 1px solid #4b545c;
-  min-width: 90px;
-  padding-right: 10px;
-}
+  td.date {
+    font-weight: bold;
+    border-right: 1px solid $grey;
+    min-width: 90px;
+    padding-right: 10px;
+  }
 
-.hugo-list td.title {
-  padding-left: 8px;
-}
+  td.title {
+    padding-left: 8px;
+  }
 
-.hugo-list td.title a {
-  padding: 4px;
+  td.title a {
+    padding: 4px;
+  }
 }
 
 /*
