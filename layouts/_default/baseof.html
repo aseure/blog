@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ $style := resources.Get "scss/main.scss" | resources.ToCSS | resources.Minify }}
+    <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
     <title>{{ .Title }}</title>
-    <link rel="stylesheet" href="{{ "css/main.css" | absURL }}">
     <script src="{{ "js/main.js" | absURL }}"></script>
   </head>
   <body>
