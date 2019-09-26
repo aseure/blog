@@ -1,5 +1,13 @@
 {{ define "main" }}
-{{ .Scratch.Set "title" .Title }}
-{{ .Scratch.Set "section" .Section }}
-{{ partial "list.html" . }}
+<h1 class="title">
+  {{ .Title }}
+</h1>
+<table class="hugo-list">
+  {{ range .Pages.ByDate.Reverse }}
+  <tr>
+    <td class="main-color date">{{ .Date.Format "2006-01-02" }}</td>
+    <td class="main-color title"><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+  </tr>
+  {{ end }}
+</table>
 {{ end }}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,12 +8,29 @@
     <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
     <title>{{ .Title }}</title>
   </head>
+
   <body>
     <nav>
-    {{ partial "nav.html" . }}
+      <span class="title">
+        <a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}">{{ .Site.Title }}</a>
+      </span>
+      <span class="links">
+        {{ range $i, $e := .Site.Sections }}
+        {{ if $i }}
+        <span class="slash">/</span>
+        {{ end }}
+        <a href="{{ $e.Permalink }}" title="{{ $e.Title }}">{{ $e.Name }}</a>
+        {{ end }}
+
+        {{ range .Site.Menus.main }}
+        <span class="slash">/</span>
+        <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+        {{ end }}
+      </span>
     </nav>
     <main>
-    {{- block "main" . }}{{- end }}
+      {{- block "main" . }}{{- end }}
     </main>
   </body>
+
 </html>

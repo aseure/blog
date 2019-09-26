@@ -1,5 +1,3 @@
-{{ define "main" }}
-{{ .Scratch.Set "title" "Posts" }}
-{{ .Scratch.Set "section" "posts" }}
-{{ partial "list.html" . }}
+{{ range where .Pages "Section" "posts" }}
+{{ .Render "list" }}
 {{ end }}
