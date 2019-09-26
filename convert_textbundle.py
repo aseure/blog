@@ -60,6 +60,12 @@ print(f':: {article_name}')
 remove_file(output_post_markdown)
 remove_dir(output_post_dir)
 
+if file_exists(os.path.join(input_textbundle, 'text.markdown')):
+    os.rename(
+        os.path.join(input_textbundle, 'text.markdown'),
+        os.path.join(input_textbundle, 'text.md'),
+    )
+
 shutil.copy(
     os.path.join(input_textbundle, 'text.md'),
     output_post_markdown,
