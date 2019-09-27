@@ -195,6 +195,8 @@ The overall implementation of `MarshalJSON()` is pretty straightforward. It goes
 4. Create a new instance of this type
 5. Serialize it
 
+And here is what it looks like:
+
 ```go
 func (h Heating) MarshalJSON() ([]byte, error) {
 	// Step 1
@@ -236,8 +238,8 @@ func (h Heating) MarshalJSON() ([]byte, error) {
 Be cautious though, according to benchmarks, we can see that there’s an important overhead using this method and the cost increases linearly with the number of options passed.
 
 ```
-BenchmarkMarhalJSON/With_0_CustomOption(s)-8         	 2000000	       788 ns/op
-BenchmarkMarhalJSON/With_1_CustomOption(s)-8         	  300000	      4321 ns/op
-BenchmarkMarhalJSON/With_2_CustomOption(s)-8         	  200000	      5645 ns/op
-BenchmarkMarhalJSON/With_3_CustomOption(s)-8         	  200000	      7245 ns/op
+BenchmarkMarhalJSON/With_0_CustomOption(s)-8	2000000		 788 ns/op
+BenchmarkMarhalJSON/With_1_CustomOption(s)-8	 300000		4321 ns/op
+BenchmarkMarhalJSON/With_2_CustomOption(s)-8	 200000		5645 ns/op
+BenchmarkMarhalJSON/With_3_CustomOption(s)-8	 200000		7245 ns/op
 ```
