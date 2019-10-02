@@ -38,3 +38,12 @@ menu: main
 - **Website:** [link](http://www.techsummit.io/amsterdam2017/)
 - **Slides:** [link](https://docs.google.com/presentation/d/1c_g3f9EBw7cP7tM8tfam_i2uE3vDrD9QgCjOM7Nhc6c/edit?usp=sharing)
 - **YouTube:** [link](https://www.youtube.com/watch?v=Y7qypy633dw)
+
+## Challenges of maintaining a Go client
+
+- **Event:** The GIG : Gathering of International Gophers
+- **Location:** Paris, France
+- **Date:** October 9th, 2016
+- **Website:** [link](https://www.meetup.com/Golang-Paris/events/234263218/)
+- **Slides:** Not available
+- **YouTube:** Not available
