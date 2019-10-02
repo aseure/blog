@@ -5,6 +5,15 @@ menu: main
 
 ## Developing a Go API client: the do’s and don’ts
 
+- **Event:** Golab 2019
+- **Location:** Firenze, Italy
+- **Date:** October 20th - 22nd, 2019
+- **Website:** [link](https://golab.io)
+- **Slides:** Available soon
+- **Video:** Available soon
+
+## Developing a Go API client: the do’s and don’ts
+
 - **Event:** GoGoConf 2019
 - **Location:** Kraków, Poland
 - **Date:** June 14th, 2019
