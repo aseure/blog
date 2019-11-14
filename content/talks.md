@@ -9,8 +9,8 @@ menu: main
 - **Location:** Firenze, Italy
 - **Date:** October 20th - 22nd, 2019
 - **Website:** [link](https://golab.io)
-- **Slides:** Available soon
-- **Video:** Available soon
+- **Slides:** [link](https://www.dropbox.com/s/2ifn2odjgnp56o0/presentation.pdf?dl=0)
+- **Video:** [link](https://www.youtube.com/watch?v=at3gmL0YWzo)
 
 ## Developing a Go API client: the do’s and don’ts
 
