@@ -1,0 +1,18 @@
+dist: bionic
+
+language: minimal
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_2b92c7beed6b_key -iv $encrypted_2b92c7beed6b_iv -in travis_aseure_blog.enc -out travis_aseure_blog -d
+  - chmod 400 travis_aseure_blog
+
+install:
+  - sudo apt-get install -y wget rsync
+  - wget 'https://github.com/gohugoio/hugo/releases/download/v0.63.1/hugo_extended_0.63.1_Linux-64bit.tar.gz'
+  - tar zxf hugo_extended_0.63.1_Linux-64bit.tar.gz
+  - sudo install hugo /usr/local/bin
+
+script:
+  - make convert
+  - make build
+  - make deploy

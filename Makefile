@@ -7,6 +7,6 @@ build:
 	hugo
 
 deploy:
-	rsync -e 'ssh -i ~/.ssh/scaleway' -avz --delete public/* anthony@aseure.fr:/home/anthony/web/aseure.fr/
+	rsync -e 'ssh -o "StrictHostKeyChecking no" -i travis_aseure_blog' -avz --delete public/* anthony@aseure.fr:/home/anthony/blog.aseure.fr/
 
 .PHONY: convert build deploy
