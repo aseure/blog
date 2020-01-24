@@ -3,6 +3,7 @@ import os
 import re
 import shutil
 import sys
+import zipfile
 
 
 def dir_exists(d):
@@ -32,6 +33,12 @@ if len(sys.argv) != 2:
 
 input_textbundle      = os.path.expanduser(sys.argv[1])
 output_hugo_posts_dir = os.path.expanduser('content/posts/')
+
+if input_textbundle.endswith('.textpack'):
+    with zipfile.ZipFile(input_textbundle, 'r') as f:
+        f.extractall()
+    input_textbundle = input_textbundle.replace('.textpack', '.textbundle')
+    os.rename('Content.textbundle', input_textbundle)
 
 if not dir_exists(input_textbundle):
     print(f'Input TextBundle {input_textbundle} does not exist')
