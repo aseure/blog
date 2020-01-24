@@ -15,4 +15,4 @@ install:
 script:
   - make convert
   - make build
-  - make deploy
+  - rsync -e 'ssh -o "StrictHostKeyChecking no" -i travis_aseure_blog' -avz --delete public/* anthony@aseure.fr:/home/anthony/blog.aseure.fr/
