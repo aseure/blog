@@ -38,8 +38,7 @@ if not dir_exists(input_textbundle):
     sys.exit(1)
 
 if not dir_exists(output_hugo_posts_dir):
-    print(f'Output posts directory {output_hugo_posts_dir} does not exist')
-    sys.exit(1)
+    os.makedirs(output_hugo_posts_dir)
 
 if not input_textbundle.endswith('.textbundle'):
     print(f'Input Textbundle {input_textbundle} does not have a .textbundle extension')
