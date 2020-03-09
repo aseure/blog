@@ -23,8 +23,8 @@ In this case, `name` attribute has been renamed into `firstname`. However, the A
 
 ```go
 type Contact struct {
-	Firstname string `json:"firstname"`
-	Lastname  string `json:"lastname"`
+    Firstname string `json:"firstname"`
+    Lastname  string `json:"lastname"`
 }
 ```
 
@@ -32,7 +32,7 @@ Because we don’t want to expose the legacy `name` attribute name on our Go pub
 
 ```go
 type legacyContact struct {
-	Name string `json:"name"`
+    Name string `json:"name"`
 }
 ```
 
@@ -40,16 +40,16 @@ Finally, let’s unmarshal our payload into both Go representations and replace 
 
 ```go
 func (c *Contact) UnmarshalJSON(data []byte) error {
-	var tmp legacyContact
+    var tmp legacyContact
 
-	json.Unmarshal(data, c)
-	json.Unmarshal(data, &tmp)
+    json.Unmarshal(data, c)
+    json.Unmarshal(data, &tmp)
 
-	if len(c.Name) == 0 {
-		c.Name = legacy.Field
-	}
+    if len(c.Name) == 0 {
+        c.Name = legacy.Field
+    }
 
-	return nil
+    return nil
 }
 ```
 
@@ -70,7 +70,7 @@ Often times, some payload fields may not need to be reflected on the public API 
 
 ```go
 type Contact struct {
-	Name string `json:"name"`
+    Name string `json:"name"`
 }
 ```
 
@@ -78,8 +78,8 @@ In that case, the `age` property is unknown from the Go structure’s point of v
 
 ```go
 type Contact struct {
-	Name          string                 `json:"name"`
-	UnknownFields map[string]interface{} `json:"-"`
+    Name          string                 `json:"name"`
+    UnknownFields map[string]interface{} `json:"-"`
 }
 ```
 
@@ -93,13 +93,13 @@ Perfect! Let’s populate it now. Similarly to what we have done to handle legac
 
 ```go
 func (c *Contact) UnmarshalJSON(data []byte) error {
-	type contact Contact
+    type contact Contact
 
-	json.Unmarshal(data, (*contact)(c))
-	json.Unmarshal(data, &c.UnknownFields)
-	delete(c.UnknownFields, "name")
+    json.Unmarshal(data, (*contact)(c))
+    json.Unmarshal(data, &c.UnknownFields)
+    delete(c.UnknownFields, "name")
 
-	return nil
+    return nil
 }
 ```
 
@@ -115,7 +115,7 @@ They are times where your users will want or need to use undocumented parameters
 
 ```go
 type Heating struct {
-	Temperature int `json:"temperature"`
+    Temperature int `json:"temperature"`
 }
 ```
 
@@ -132,8 +132,8 @@ The easy and straightforward solution is to let the user defined their own type 
 
 ```go
 type HeatingExtra struct {
-	Heating
-	ForceOn bool `json:"force_on"`
+    Heating
+    ForceOn bool `json:"force_on"`
 }
 ```
 
@@ -141,10 +141,10 @@ While this solution does work, there are two main issues here. First, due to lac
 
 ```go
 h := HeatingExtra{
-	Heating: Heating{
-		Temperature: 21,
-	},
-	ForceOn: true,
+    Heating: Heating{
+        Temperature: 21,
+    },
+    ForceOn: true,
 }
 ```
 
@@ -152,36 +152,36 @@ More importantly, the fact that the user has to create a new dedicated structure
 
 ```go
 type Heating struct {
-	Temperature  int                    `json:"temperature"`
-	ExtraOptions map[string]interface{} `json:"-"`
+    Temperature  int                    `json:"temperature"`
+    ExtraOptions map[string]interface{} `json:"-"`
 }
 
 type CustomOption struct {
-	K string
-	V interface{}
+    K string
+    V interface{}
 }
 
 func NewHeating(t int, opts ...CustomOption) Heating {
-	m := make(map[string]interface{})
-	for _, opt := range opts {
-		m[opt.K] = opt.V
-	}
-	return Heating{
-		Temperature:  t,
-		ExtraOptions: m,
-	}
+    m := make(map[string]interface{})
+    for _, opt := range opts {
+        m[opt.K] = opt.V
+    }
+    return Heating{
+        Temperature:  t,
+        ExtraOptions: m,
+    }
 }
 
 func (h Heating) MarshalJSON() ([]byte, error) {
-	// TODO
+    // TODO
 }
 
 func main() {
-	opt := CustomOption{K: "force_on", V: true}
-	h := NewHeating(21, opt)
+    opt := CustomOption{K: "force_on", V: true}
+    h := NewHeating(21, opt)
 
-	data, _ := json.Marshal(h)
-	fmt.Println(string(data))
+    data, _ := json.Marshal(h)
+    fmt.Println(string(data))
 }
 ```
 
@@ -199,47 +199,47 @@ And here is what it looks like:
 
 ```go
 func (h Heating) MarshalJSON() ([]byte, error) {
-	// Step 1
-	if len(h.ExtraOptions) == 0 {
-		type heating Heating
-		return json.Marshal(heating(h))
-	}
+    // Step 1
+    if len(h.ExtraOptions) == 0 {
+        type heating Heating
+        return json.Marshal(heating(h))
+    }
 
-	var fields []reflect.StructField
+    var fields []reflect.StructField
 
-	// Step 2
-	t := reflect.TypeOf(h)
-	for i := 0; i < t.NumField(); i++ {
-		fields = append(fields, t.Field(i))
-	}
+    // Step 2
+    t := reflect.TypeOf(h)
+    for i := 0; i < t.NumField(); i++ {
+        fields = append(fields, t.Field(i))
+    }
 
-	// Step 3
-	for k, v := range h.ExtraOptions {
-		fields = append(fields, reflect.StructField{
-			Name: strings.Title(k),
-			Type: reflect.TypeOf(v),
-			Tag:  reflect.StructTag(fmt.Sprintf(`json:"%s"`, k)),
-		})
-	}
+    // Step 3
+    for k, v := range h.ExtraOptions {
+        fields = append(fields, reflect.StructField{
+            Name: strings.Title(k),
+            Type: reflect.TypeOf(v),
+            Tag:  reflect.StructTag(fmt.Sprintf(`json:"%s"`, k)),
+        })
+    }
 
-	// Step 4
-	e := reflect.New(reflect.StructOf(fields)).Elem()
-	e.FieldByName("Temperature").Set(reflect.ValueOf(h.Temperature))
-	for k, v := range h.ExtraOptions {
-		e.FieldByName(strings.Title(k)).Set(reflect.ValueOf(v))
-	}
-	itf := e.Interface()
+    // Step 4
+    e := reflect.New(reflect.StructOf(fields)).Elem()
+    e.FieldByName("Temperature").Set(reflect.ValueOf(h.Temperature))
+    for k, v := range h.ExtraOptions {
+        e.FieldByName(strings.Title(k)).Set(reflect.ValueOf(v))
+    }
+    itf := e.Interface()
 
-	// Step 5
-	return json.Marshal(itf)
+    // Step 5
+    return json.Marshal(itf)
 }
 ```
 
 Be cautious though, according to benchmarks, we can see that there’s an important overhead using this method and the cost increases linearly with the number of options passed.
 
 ```
-BenchmarkMarhalJSON/With_0_CustomOption(s)-8	2000000		 788 ns/op
-BenchmarkMarhalJSON/With_1_CustomOption(s)-8	 300000		4321 ns/op
-BenchmarkMarhalJSON/With_2_CustomOption(s)-8	 200000		5645 ns/op
-BenchmarkMarhalJSON/With_3_CustomOption(s)-8	 200000		7245 ns/op
+BenchmarkMarhalJSON/With_0_CustomOption(s)-8	2000000	 788 ns/op
+BenchmarkMarhalJSON/With_1_CustomOption(s)-8	 300000	4321 ns/op
+BenchmarkMarhalJSON/With_2_CustomOption(s)-8	 200000	5645 ns/op
+BenchmarkMarhalJSON/With_3_CustomOption(s)-8	 200000	7245 ns/op
 ```
