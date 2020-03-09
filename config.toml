@@ -1,6 +1,4 @@
-baseurl                    = "/"
-languageCode               = "en-us"
-title                      = "Anthony Seure"
-pygmentsStyle              = "friendly"
-pygmentsCodeFences         = true
-footnoteReturnLinkContents = "↩"
+baseurl            = "/"
+languageCode       = "en-us"
+pygmentsUseClasses = true
+title              = "Anthony Seure"

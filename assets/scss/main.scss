@@ -1,10 +1,28 @@
-$grey:              #4b545c;
-$grey-light:        #e6e9eb;
-$main-color:        #5e99bd;
-$main-color-light:  #eaf2f6;
-$main-color-bright: #2274a5;
-$font-size:         12pt;
-$width:             700px;
+$color-background: white;
+$color-text: #363636;
+$color-theme: #000080;
+$color-theme-light: #e5e5f2;
+
+$color-title: $color-theme;
+$color-title-hover: $color-theme;
+$color-title-hover-bg: $color-theme-light;
+
+$color-nav: $color-text;
+$color-nav-hover: $color-text;
+$color-nav-hover-bg: #ececec;
+
+$color-link: $color-theme;
+$color-link-hover: $color-theme;
+$color-link-hover-bg: $color-theme-light;
+
+$color-code-bg: #faf9f7;
+$color-code-border: #e5e4e1;
+$color-footnote-bg: #faf9f7;
+
+$font-size: 12pt;
+$font-size-footnote: 10pt;
+$font-size-code: 12pt;
+$width: 700px;
 
 /*
  **
@@ -18,8 +36,8 @@ $width:             700px;
 }
 
 html {
-  background: white;
-  color: $grey;
+  background: $color-background;
+  color: $color-text;
   font-family: sans-serif;
   font-size: 1em;
   font-weight: normal;
@@ -28,7 +46,7 @@ html {
 
 main {
   width: $width;
-  margin: 50px auto;
+  margin: 0 auto;
 }
 
 ul {
@@ -37,21 +55,25 @@ ul {
 
 a,
 a:visited {
-  -webkit-transition: color .1s ease-out, background .1s ease-out;
-  border-radius: 5px;
-  color: $main-color;
+  -webkit-transition: color 0.1s ease-out, background 0.1s ease-out;
+  border-radius: 2px;
+  color: $color-link;
   cursor: pointer;
   text-decoration: underline;
-  padding: 2px 1px;
+  padding: 1px 1px;
 }
 
 a:hover,
 a:focus {
   outline: 0;
-  color: $main-color-bright;
+  color: $color-link-hover;
+  background-color: $color-link-hover-bg;
 }
 
-a, li, p, td {
+a,
+li,
+p,
+td {
   line-height: 1.3;
   font-size: $font-size;
 }
@@ -75,20 +97,24 @@ nav {
 
   a,
   a:visited {
+    font-size: 1.2em;
     text-decoration: none;
     font-weight: bold;
   }
 
   .title {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+
     a,
     a:visited {
-      color: $main-color;
-      font-size: 1.4em;
+      color: $color-title;
     }
 
     a:hover,
     a:focus {
-      background-color: $main-color-light;
+      color: $color-title-hover;
+      background-color: $color-title-hover-bg;
     }
   }
 
@@ -96,13 +122,13 @@ nav {
     span.slash,
     a,
     a:visited {
-      color: $grey;
-      font-size: 1em;
+      color: $color-nav;
     }
 
     a:hover,
     a:focus {
-      background-color: $grey-light;
+      color: $color-nav-hover;
+      background-color: $color-nav-hover-bg;
     }
   }
 }
@@ -114,11 +140,8 @@ nav {
  **/
 
 h1.title {
-  background-color: $main-color-light;
-  color: $main-color;
-  padding: 20px;
-  text-align: center;
-  margin: 40px 0;
+  color: $color-theme;
+  margin: 50px 0;
 }
 
 .hugo-single {
@@ -126,7 +149,8 @@ h1.title {
     margin: 20px 0;
   }
 
-  ul, ol {
+  ul,
+  ol {
     list-style-position: outside;
   }
 
@@ -134,7 +158,8 @@ h1.title {
     list-style-type: disc;
   }
 
-  ol, ul {
+  ol,
+  ul {
     margin-top: 20px;
     margin-left: 20px;
     padding-left: 10px;
@@ -149,13 +174,17 @@ h1.title {
     width: 100%;
   }
 
-  h2, h3, h4, h5, h6 {
-    margin: 20px 0 0 0;
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 50px 0;
   }
 
   blockquote {
-    border-left: 5px solid $main-color;
-    margin: 20px;
+    border-left: 5px solid $color-theme;
+    margin: 50px 0;
     padding: 0 20px;
 
     p {
@@ -174,57 +203,54 @@ h1.title {
   .footnote-ref,
   .footnote-return,
   .footnotes li::before {
-    background-color: $main-color-light;
-    border-radius: 4px;
-    border: 1px solid $main-color;
-    color: $main-color;
+    background-color: $color-footnote-bg;
+    border-radius: 2px;
     padding: 1px 3px 1px 3px;
+    font-size: $font-size-footnote;
+  }
+
+  .footnote-ref:hover,
+  .footnote-return:hover,
+  .footnotes li::before:hover {
+    text-decoration: underline;
   }
 
   .footnotes {
     hr {
       margin: 50px 0;
-      color: $main-color;
-      border-color: inherit;
+      color: $color-theme;
     }
 
-    ol {
-      margin-left: 0;
-      padding-left: 0;
-      list-style: none;
-      counter-reset: li;
-    }
-
-    ol > li {
-      counter-increment: li;
-      text-indent: -1.3em;
-      padding-left: 1.3em;
-      padding-bottom: 10px;
-      overflow: visible;
-    }
-
-    ol > li::before {
-      margin-right: 3px;
-      content: counter(li);
+    .footnote-backref {
+      display: none;
     }
   }
 }
 
 p code,
 li code,
-pre code {
-  font-family: Consolas, Monaco, monospace;
-  font-size: $font-size;
-  background-color: $main-color-light;
+p > pre code {
+  font-family: "Roboto Mono", monospace, sans-serif;
+  font-size: $font-size-code;
+  background-color: $color-code-bg;
+  border: 1px solid $color-code-border;
 }
 
 pre {
-  border-radius: 4px;
-  border: 1px solid rgba(38, 52, 74, 0.5);
+  border-radius: 2px;
   margin: 20px 0;
-  padding: 10px;
+  padding: 20px;
   overflow: auto;
-  background-color: $main-color-light !important;
+  background-color: $color-code-bg !important;
+  border: 1px solid $color-code-border;
+  font-size: $font-size-code;
+  font-family: "Roboto Mono", monospace, sans-serif;
+
+  // Custom fixes for borland pygments style for comment
+  .language-json .err {
+    color: #008800;
+    background-color: transparent;
+  }
 }
 
 /*
@@ -248,14 +274,13 @@ table.hugo-list {
   }
 
   td.date {
-    border-right: 1px solid $grey;
+    border-right: 1px solid $color-text;
     min-width: 90px;
   }
 
   td.title {
     padding-left: 8px;
   }
-
 }
 
 /*
@@ -272,7 +297,6 @@ table.hugo-list {
   text-align: center;
   margin-top: 10px;
 }
-
 
 /*
  **
@@ -299,5 +323,11 @@ table.hugo-list {
 
   nav span.slash {
     margin: auto 0;
+  }
+
+  main > h1,
+  .hugo-single > h1,
+  .hugo-single > h2 {
+    text-align: center;
   }
 }

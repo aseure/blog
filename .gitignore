@@ -1,4 +1,5 @@
 _gen/
+assets/scss/syntax.css
 content/posts/
 public/
 travis_aseure_blog

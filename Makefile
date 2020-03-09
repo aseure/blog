@@ -7,6 +7,7 @@ convert:
 	./convert.sh
 
 build:
+	hugo gen chromastyles --style=borland > assets/scss/syntax.css
 	hugo
 
 .PHONY: convert build deploy

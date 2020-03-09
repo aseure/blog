@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ $style := resources.Get "scss/main.scss" | resources.ToCSS | resources.Minify }}
     <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
+    {{ $syntax := resources.Get "scss/syntax.css" | resources.ToCSS | resources.Minify }}
+    <link rel="stylesheet" type="text/css" href="{{ $syntax.Permalink }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <title>{{ .Title }}</title>
   </head>
 
