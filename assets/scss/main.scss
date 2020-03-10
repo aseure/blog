@@ -56,6 +56,7 @@ ul {
 
 a,
 a:visited {
+  transition: color 0.1s ease-out, background 0.1s ease-out;
   -webkit-transition: color 0.1s ease-out, background 0.1s ease-out;
   border-radius: 2px;
   color: $color-link;
