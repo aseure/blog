@@ -280,8 +280,13 @@ table.hugo-list {
     min-width: 90px;
   }
 
-  td.title {
+  td.titles {
     padding-left: 8px;
+
+    li::before {
+      content: " ⭑ ";
+      color: $color-text;
+    }
   }
 }
 

@@ -3,10 +3,15 @@
   {{ .Title }}
 </h1>
 <table class="hugo-list">
-  {{ range .Pages.ByDate.Reverse }}
+  {{ range .Pages.GroupByDate "January 2006" }}
   <tr>
-    <td class="main-color date">{{ .Date.Format "2006-01-02" }}</td>
-    <td class="main-color title"><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+    <td class="main-color date">{{ .Key }}</td>
+    <td class="main-color titles">
+      <ul>
+        {{ range .Pages }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
   </tr>
   {{ end }}
 </table>
