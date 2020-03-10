@@ -4,7 +4,14 @@
 
 {{ define "main" }}
 <div class="hugo-single">
-  <h1 class="title">{{ .Title }}</h1>
-  {{ .Content }}
+  <div class="header">
+    <h1 class="title">{{ .Title }}</h1>
+    {{ if (.Date) }}
+    <h2 class="date">{{ .Date.Format "2 January 2006" }}</h2>
+    {{ end }}
+  </div>
+  <div class="post">
+    {{ .Content }}
+  </div>
 </div>
 {{ end }}

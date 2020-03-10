@@ -21,14 +21,12 @@ $color-footnote-bg: #faf9f7;
 
 $font-size: 14pt;
 $font-size-footnote: 12pt;
-$font-size-code: 14pt;
+$font-size-code: 12pt;
 $width: 800px;
 
-/*
- **
- ** General
- **
- **/
+//////////////////////////////////////////////////////////////////////////////
+// General                                                                  //
+//////////////////////////////////////////////////////////////////////////////
 
 * {
   margin: 0;
@@ -80,11 +78,9 @@ td {
   font-size: $font-size;
 }
 
-/*
- **
- ** Navigation bar
- **
- **/
+//////////////////////////////////////////////////////////////////////////////
+// Navigation Bar                                                           //
+//////////////////////////////////////////////////////////////////////////////
 
 nav {
   width: $width;
@@ -135,96 +131,112 @@ nav {
   }
 }
 
-/*
- **
- ** Hugo "single" pages
- **
- **/
-
-h1.title {
-  color: $color-theme;
-  margin: 50px 0;
-}
+//////////////////////////////////////////////////////////////////////////////
+// Hugo "single" pages                                                      //
+//////////////////////////////////////////////////////////////////////////////
 
 .hugo-single {
-  p {
-    margin: 20px 0;
-  }
-
-  ul,
-  ol {
-    list-style-position: outside;
-  }
-
-  ul {
-    list-style-type: disc;
-  }
-
-  ol,
-  ul {
-    margin-top: 20px;
-    margin-left: 20px;
-    padding-left: 10px;
-  }
-
-  li {
-    margin-bottom: 3px;
-  }
-
-  img {
-    height: auto;
-    width: 100%;
-  }
-
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  .header {
     margin: 50px 0;
-  }
 
-  blockquote {
-    border-left: 5px solid $color-theme;
-    margin: 50px 0;
-    padding: 0 20px;
-
-    p {
-      font-style: italic;
-      font-size: 1.3em;
-      margin: 0;
-      margin-bottom: 10px;
-    }
-  }
-
-  sup {
-    vertical-align: top;
-    position: relative;
-  }
-
-  .footnote-ref,
-  .footnote-return,
-  .footnotes li::before {
-    background-color: $color-footnote-bg;
-    border-radius: 2px;
-    padding: 1px 3px 1px 3px;
-    font-size: $font-size-footnote;
-  }
-
-  .footnote-ref:hover,
-  .footnote-return:hover,
-  .footnotes li::before:hover {
-    text-decoration: underline;
-  }
-
-  .footnotes {
-    hr {
-      margin: 50px 0;
+    h1 {
       color: $color-theme;
+      margin: 0;
     }
 
-    .footnote-backref {
-      display: none;
+    h2 {
+      color: $color-text;
+      margin: 0;
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+  }
+
+  .post {
+    p {
+      margin: 20px 0;
+    }
+
+    ul,
+    ol {
+      list-style-position: outside;
+    }
+
+    ul {
+      list-style-type: disc;
+    }
+
+    ol,
+    ul {
+      margin-top: 20px;
+      margin-left: 20px;
+      padding-left: 10px;
+    }
+
+    li {
+      margin-bottom: 3px;
+    }
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 50px 0;
+    }
+
+    h2.date {
+      margin: 0;
+      margin-bottom: 50px;
+    }
+
+    blockquote {
+      border-left: 5px solid $color-theme;
+      margin: 50px 0;
+      padding: 0 20px;
+
+      p {
+        font-style: italic;
+        font-size: 1.3em;
+        margin: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+    sup {
+      vertical-align: top;
+      position: relative;
+    }
+
+    .footnote-ref,
+    .footnote-return,
+    .footnotes li::before {
+      background-color: $color-footnote-bg;
+      border-radius: 2px;
+      padding: 1px 3px 1px 3px;
+      font-size: $font-size-footnote;
+    }
+
+    .footnote-ref:hover,
+    .footnote-return:hover,
+    .footnotes li::before:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes {
+      hr {
+        margin: 50px 0;
+        color: $color-theme;
+      }
+
+      .footnote-backref {
+        display: none;
+      }
     }
   }
 }
@@ -255,11 +267,14 @@ pre {
   }
 }
 
-/*
- **
- ** Hugo "list" pages
- **
- **/
+//////////////////////////////////////////////////////////////////////////////
+// Hugo "list" pages                                                        //
+//////////////////////////////////////////////////////////////////////////////
+
+main > h1 {
+  color: $color-theme;
+  margin: 50px 0;
+}
 
 .hugo-list-title {
   margin: 60px 0;
@@ -267,17 +282,14 @@ pre {
 }
 
 table.hugo-list {
-  border-spacing: 0 10px;
-}
-
-.hugo-list {
-  tr {
-    vertical-align: middle;
-  }
+  border-collapse: separate;
+  border-spacing: 10px 40px;
 
   td.date {
-    border-right: 1px solid $color-text;
+    font-weight: bold;
     min-width: 90px;
+    vertical-align: top;
+    padding-top: 1px;
   }
 
   td.titles {
@@ -287,14 +299,18 @@ table.hugo-list {
       content: " ⭑ ";
       color: $color-text;
     }
+
+    li {
+      margin-left: 20px;
+      text-indent: -20px;
+      margin-bottom: 10px;
+    }
   }
 }
 
-/*
- **
- ** 404
- **
- **/
+//////////////////////////////////////////////////////////////////////////////
+// 404                                                                      //
+//////////////////////////////////////////////////////////////////////////////
 
 .page-not-found {
   margin-top: 60px;
@@ -305,11 +321,9 @@ table.hugo-list {
   margin-top: 10px;
 }
 
-/*
- **
- ** CSS media queries
- **
- **/
+//////////////////////////////////////////////////////////////////////////////
+// CSS media queries                                                        //
+//////////////////////////////////////////////////////////////////////////////
 
 @media only screen and (max-width: 850px) {
   main {
