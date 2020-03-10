@@ -282,14 +282,15 @@ main > h1 {
 }
 
 table.hugo-list {
-  border-collapse: separate;
-  border-spacing: 10px 40px;
-
   td.date {
     font-weight: bold;
     min-width: 90px;
     vertical-align: top;
     padding-top: 1px;
+  }
+
+  td {
+    padding-bottom: 30px;
   }
 
   td.titles {
