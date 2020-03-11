@@ -1,4 +1,4 @@
-all: clean convert build
+all: convert build
 
 clean:
 	git clean -xfd
@@ -10,4 +10,4 @@ build:
 	hugo gen chromastyles --style=borland > assets/scss/syntax.css
 	hugo
 
-.PHONY: convert build deploy
+.PHONY: clean convert build
