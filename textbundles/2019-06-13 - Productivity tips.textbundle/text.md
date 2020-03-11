@@ -1,4 +1,4 @@
-# 2019-06-13 - Productivity tips
+# Productivity tips
 
 My team at work has grown a lot lately. Developers who joined the team are as experienced or more than I am. So when we started working together, the things I felt confident enough to help them with was our existing codebases and tools. After some pair programming with one of my colleagues, I thought I could show him a tip or two regarding what I use daily which makes my life easier as a developper.
 

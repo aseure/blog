@@ -1,8 +1,8 @@
-# 2019-07-18 - Get your privacy straight
+# Get your privacy straight
 
 With the recent buzz around the FaceApp application which ages your pictures or the previous boy/girl filters from Snapchat, I was really amused by the recent reactions.
 
-First, the French newspaper Le Monde [wants to remind us](https://www.lemonde.fr/pixels/article/2019/07/17/tout-savoir-avant-d-installer-faceapp-et-appliquer-son-filtre-a-selfie-pour-se-voir-vieux_5490548_4408996.html) that the company behind FaceApp, Wireless Lab, does not care about GDPR - more on that later - and will keep all pictures sent to the application to their Cloud infrastructure in Russia. Actually, I didn’t even find this news, someone from my family did. 
+First, the French newspaper Le Monde [wants to remind us](https://www.lemonde.fr/pixels/article/2019/07/17/tout-savoir-avant-d-installer-faceapp-et-appliquer-son-filtre-a-selfie-pour-se-voir-vieux_5490548_4408996.html) that the company behind FaceApp, Wireless Lab, does not care about GDPR - more on that later - and will keep all pictures sent to the application to their Cloud infrastructure in Russia. Actually, I didn’t even find this news, someone from my family did.
 
 The newspaper is really concerned, and consequently tells its readers to be really concerned as well, about the fact that our face is now on Russian servers.
 

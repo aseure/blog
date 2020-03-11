@@ -1,4 +1,4 @@
-# 2017-06-23 - Talking at a Tech Conference
+# Talking at a Tech Conference
 
 Developer is not always a speaking job. Of course, you discuss with your
 colleagues, about what they are working on, how they are doing, you have
@@ -52,7 +52,7 @@ will finally receive this kind of email:
 
 > Thank you for sending in a proposal to speak at TechSummit Amsterdam
 > (techsummit.io)!
-> 
+>
 > The Program committee has reviewed all the proposals and we are happy to
 > include your talk “Building a magic and reliable pipeline in the cloud” in
 > the schedule.
