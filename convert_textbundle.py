@@ -85,14 +85,14 @@ if dir_exists(input_assets_dir):
         os.path.join(output_post_dir, 'assets'),
     )
 
-front_matter = ('---'                    +  '\n' +
-               'title: "' + article_name + '"\n' +
-               'date:  "' + date         + '"\n' +
-               '---\n\n')
-
 with open(output_post_markdown, 'r+') as f:
-    next(f) # Skip first line
+    title = next(f)[2:]
     content = f.read()
+
+front_matter = ('---'             +  '\n' +
+               'title: "' + title + '"\n' +
+               'date:  "' + date  + '"\n' +
+               '---\n\n')
 
 with open(output_post_markdown, 'w+') as f:
     f.write(front_matter)
