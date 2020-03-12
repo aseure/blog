@@ -271,40 +271,42 @@ pre {
 // Hugo "list" pages                                                        //
 //////////////////////////////////////////////////////////////////////////////
 
-main > h1 {
-  color: $color-theme;
-  margin: 50px 0;
-}
-
-.hugo-list-title {
-  margin: 60px 0;
-  text-align: center;
-}
-
-table.hugo-list {
-  td.date {
-    font-weight: bold;
-    min-width: 90px;
-    vertical-align: top;
-    padding-top: 1px;
+.list {
+  .title {
+    color: $color-theme;
+    margin: 50px 0;
   }
 
-  td {
-    padding-bottom: 30px;
-  }
+  .posts {
+    display: flex;
+    flex-direction: column;
 
-  td.titles {
-    padding-left: 8px;
+    .month-group {
+      display: flex;
+      flex-direction: row;
+      padding-top: 30px;
 
-    li::before {
-      content: " ⭑ ";
-      color: $color-text;
-    }
 
-    li {
-      margin-left: 20px;
-      text-indent: -20px;
-      margin-bottom: 10px;
+      .month {
+        min-width: 20%;
+      }
+
+      .titles {
+        display: flex;
+        flex-direction: column;
+        padding-left: 8px;
+
+        li::before {
+          content: " ⭑ ";
+          color: $color-text;
+        }
+
+        li {
+          margin-left: 20px;
+          text-indent: -20px;
+          margin-bottom: 10px;
+        }
+      }
     }
   }
 }
@@ -351,5 +353,26 @@ table.hugo-list {
   .hugo-single > h1,
   .hugo-single > h2 {
     text-align: center;
+  }
+
+  .list {
+    .title {
+      text-align: center;
+    }
+
+    .posts {
+      .month-group {
+        align-items: center;
+        flex-direction: column;
+
+        .titles {
+          align-items: center;
+          padding-top: 30px;
+          li::before {
+            content: "";
+          }
+        }
+      }
+    }
   }
 }

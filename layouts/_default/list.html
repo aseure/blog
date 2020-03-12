@@ -1,18 +1,20 @@
 {{ define "main" }}
-<h1 class="title">
-  {{ .Title }}
-</h1>
-<table class="hugo-list">
-  {{ range .Pages.GroupByDate "January 2006" }}
-  <tr>
-    <td class="main-color date">{{ .Key }}</td>
-    <td class="main-color titles">
-      <ul>
+<div class="list">
+  <h1 class="title">
+    {{ .Title }}
+  </h1>
+
+  <div class="posts">
+    {{ range .Pages.GroupByDate "January 2006" }}
+    <div class="month-group">
+      <h2 class="month">{{ .Key }}</h2>
+      <ul class="titles">
         {{ range .Pages }}
         <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
         {{ end }}
       </ul>
-  </tr>
-  {{ end }}
-</table>
+    </div>
+    {{ end }}
+  </div>
+</div>
 {{ end }}
