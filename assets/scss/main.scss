@@ -101,7 +101,7 @@ nav {
   }
 
   .title {
-    font-size: 1.3em;
+    font-size: 1.7em;
     margin-bottom: 5px;
 
     a,
@@ -135,7 +135,7 @@ nav {
 // Hugo "single" pages                                                      //
 //////////////////////////////////////////////////////////////////////////////
 
-.hugo-single {
+.single {
   .header {
     margin: 50px 0;
 
@@ -349,15 +349,18 @@ pre {
     margin: auto 0;
   }
 
-  main > h1,
-  .hugo-single > h1,
-  .hugo-single > h2 {
-    text-align: center;
+  .single {
+    .title,
+    h1,
+    h2 {
+      text-align: center;
+    }
   }
 
   .list {
     .title {
       text-align: center;
+      margin-bottom: 20px;
     }
 
     .posts {
