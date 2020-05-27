@@ -1,0 +1,21 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:aseure/blog.git",
+  "author": "Anthony Seure <anthony.seure@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build:css": "npx tailwindcss build assets/tailwind.css -o assets/style.css",
+    "build:chroma": "hugo gen chromastyles --style=tango > assets/syntax.css",
+    "watch:css": "watch 'yarn build:css' ./layouts/",
+    "build:hugo": "hugo",
+    "watch:hugo": "hugo serve",
+    "serve": "concurrently --kill-others \"yarn watch:css\" \"yarn watch:hugo\"",
+    "deploy": "rsync -e 'ssh -o \"StrictHostKeyChecking no\" -i ~/.ssh/digital_ocean' -avz --delete public/* anthony@aseure.fr:/home/anthony/blog.aseure.fr/"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "watch": "^1.0.2"
+  }
+}

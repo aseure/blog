@@ -1,39 +1,28 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html class="overflow-y-scroll" lang="{{ .Site.LanguageCode }}">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{ $style := resources.Get "scss/main.scss" | resources.ToCSS | resources.Minify }}
-    <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
-    {{ $syntax := resources.Get "scss/syntax.css" | resources.ToCSS | resources.Minify }}
-    <link rel="stylesheet" type="text/css" href="{{ $syntax.Permalink }}">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-    <title>{{ .Title }}</title>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{ $syntax := resources.Get "syntax.css" | resources.Minify }}
+  <link rel="stylesheet" type="text/css" href="{{ $syntax.Permalink }}">
+  {{ $style := resources.Get "style.css" | resources.Minify }}
+  <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
+  <title>{{ .Title }}</title>
+</head>
 
-  <body>
-    <nav>
-      <span class="title">
-        <a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}">{{ .Site.Title }}</a>
-      </span>
-      <span class="links">
-        {{ range $i, $e := .Site.Sections }}
-        {{ if $i }}
-        <span class="slash">/</span>
-        {{ end }}
-        <a href="{{ $e.Permalink }}" title="{{ $e.Title }}">{{ $e.Name }}</a>
-        {{ end }}
+<body class="grid grid-cols-12 mb-40 text-lg font-sans">
+  <div class="col-span-1 lg:col-span-3"></div>
+  <div class="col-span-10 lg:col-span-6 lg:px-24">
 
-        {{ range .Site.Menus.main }}
-        <span class="slash">/</span>
-        <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
-        {{ end }}
-      </span>
-    </nav>
-    <main>
-      {{- block "main" . }}{{- end }}
-    </main>
-  </body>
+    {{ partial "header" . }}
+
+    {{ partial "title" .Title }}
+
+    {{- block "main" . }}{{- end }}
+
+  </div>
+  <div class="col-span-1 lg:col-span-3"></div>
+</body>
 
 </html>

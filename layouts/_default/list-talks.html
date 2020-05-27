@@ -1,0 +1,37 @@
+{{ define "main" }}
+<div class="grid grid-cols-1 lg:grid-cols-2">
+
+  {{ range .Pages.GroupByDate "2006" }}
+  <h1 class="col-span-1 lg:col-span-2 text-center font-bold text-2xl text-blue-800 my-4">{{ .Key }}</h1>
+
+  {{ range .Pages }}
+  <div class="col-span-1 rounded bg-gray-200 text-center m-2 p-4 flex flex-col justify-between h-56">
+    <h2 class="font-bold text-blue-800">{{ .Title }}</h2>
+
+    <div>
+      <div>
+        For
+        {{ if (ne .Params.website "") }}
+        <a href="{{ .Params.website }}"> {{ .Params.event }}</a>
+        {{ else }}
+        {{ .Params.event }}
+        {{ end }}
+      </div>
+      <div>On {{ .Date.Format "2 January 2006" }}</div>
+      <div>In {{ .Params.location }}</div>
+    </div>
+
+    <div class="flex flex-row justify-around">
+      {{ if (ne .Params.slides "") }}
+      <a class="text-gray-600 text-base" href="{{ .Params.slides }}">Slides</a>
+      {{ end }}
+      {{ if (ne .Params.recording "") }}
+      <a class="text-gray-600 text-base" href="{{ .Params.recording }}">Recording</a>
+      {{ end }}
+    </div>
+
+  </div>
+  {{ end }}
+  {{ end }}
+</div>
+{{ end }}

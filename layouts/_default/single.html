@@ -1,17 +1,7 @@
-{{ define "title" }}
-{{ .Title }}
-{{ end }}
-
 {{ define "main" }}
-<div class="single">
-  <div class="header">
-    <h1 class="title">{{ .Title }}</h1>
-    {{ if (.Date) }}
-    <h2 class="date">{{ .Date.Format "2 January 2006" }}</h2>
-    {{ end }}
-  </div>
-  <div class="post">
-    {{ .Content }}
-  </div>
-</div>
+<main class="flex flex-col">
+  {{ partial "date" .Date }}
+
+  {{ .Content }}
+</main>
 {{ end }}

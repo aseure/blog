@@ -1,5 +1,6 @@
 _gen/
-assets/scss/syntax.css
-content/posts/
+assets/style.css
+assets/syntax.css
+content/articles/
 public/
-travis_aseure_blog
+yarn-error.log
