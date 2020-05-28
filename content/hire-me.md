@@ -22,7 +22,7 @@ I'm not actively looking for a new position, but **I'm open to opportunities** l
 
 ## Hire me as an engineering teacher or trainer
 
-Since 2019, I'm also available as a {{< kw freelancer >}}. I'm able to provide software-related courses and professional trainings, in both {{< kw French >}} or {{< kw English >}}.
+Since 2019, I'm also available as a {{< kw freelancer >}}. I'm able to provide software-related courses and professional trainings, either in {{< kw French >}} or in {{< kw English >}}.
 
 - **If you're head of pedagogy in an engineering school** contact me if you are looking for a computer science teacher regarding {{< kw "Object-Oriented Programming" >}}, {{< kw "Asynchronous Programming" >}}, {{< kw "Advanced Go" >}}, {{< kw "Advanced Java" >}}, {{< kw "Git" >}}, {{< kw "Algorithms & Datastructures" >}} or {{< kw "Introduction to Operating Systems" >}}. Depending on what you need, I'm able to build theoritical courses, practical exercises, and prepare exams, either from scratch or based on your own materials.
 
