@@ -11,6 +11,7 @@
     "watch:css": "watch 'yarn build:css' ./layouts/",
     "build:hugo": "hugo",
     "watch:hugo": "hugo serve",
+    "build": "yarn build:css && yarn build:chroma && yarn build:hugo",
     "serve": "concurrently --kill-others \"yarn watch:css\" \"yarn watch:hugo\"",
     "deploy": "rsync -e 'ssh -o \"StrictHostKeyChecking no\" -i ~/.ssh/digital_ocean' -avz --delete public/* anthony@aseure.fr:/home/anthony/blog.aseure.fr/"
   },
