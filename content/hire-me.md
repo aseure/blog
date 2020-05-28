@@ -16,12 +16,14 @@ I'm not actively looking for a new position, but **I'm open to opportunities** l
 
 - Maintainer and releaser of {{< kw "open-source" >}} libraries interfacing the Algolia REST API with many programming languages and ecosystems: mainly {{< kw "Go" >}}, {{< kw "Java" >}} and {{< kw "Scala" >}}. I'm also occasionally contributing to C#, Python, Ruby, JavaScript codebases;
 
-- {{< kw "Speaker" >}} at small-to-medium conferences in Europe.
+- {{< kw "Speaker" >}} at small-to-medium conferences in Europe;
+
+- {{< kw "Mentoring" >}} to some engineers regarding technical topics such as {{< kw "Git" >}} and {{< kw "Algorithms & Datastructures" >}}.
 
 ## Hire me as an engineering teacher or trainer
 
-Since 2019, I'm also available as a {{< kw freelancer >}} for {{< kw French >}} or {{< kw English >}} software-related courses and professional trainings.
+Since 2019, I'm also available as a {{< kw freelancer >}}. I'm able to provide software-related courses and professional trainings, in both {{< kw French >}} or {{< kw English >}}.
 
-- **If you're head of pedagogy in an engineering school** contact me if you are looking for a computer science teacher regarding {{< kw "Object-Oriented Programming" >}}, {{< kw "Asynchronous Programming" >}}, {{< kw "Advanced Java" >}}, {{< kw "Git" >}}, {{< kw "Algorithms & Datastructures" >}} or {{< kw "Introduction to Operating Systems" >}}. Depending on your needs, I may provide theoritical courses, practical exercises, and prepare exams.
+- **If you're head of pedagogy in an engineering school** contact me if you are looking for a computer science teacher regarding {{< kw "Object-Oriented Programming" >}}, {{< kw "Asynchronous Programming" >}}, {{< kw "Advanced Go" >}}, {{< kw "Advanced Java" >}}, {{< kw "Git" >}}, {{< kw "Algorithms & Datastructures" >}} or {{< kw "Introduction to Operating Systems" >}}. Depending on what you need, I'm able to build theoritical courses, practical exercises, and prepare exams, either from scratch or based on your own materials.
 
 - **If you're an engineering manager** contact me if you are looking for professional trainings for your team regarding {{< kw "software best-practices" >}}, {{< kw "Go" >}}, {{< kw "Java" >}} and {{< kw "Git" >}} trainings, {{< kw "clean code" >}} practices.
