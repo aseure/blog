@@ -4,11 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{ if .Description }}
+  <meta name="description" content="{{ .Description }}">
+  {{ else if .IsPage }}
+  <meta name="description" content="{{ .Summary | plainify }}">
+  {{ end }}
   {{ $syntax := resources.Get "syntax.css" | resources.Minify }}
   <link rel="stylesheet" type="text/css" href="{{ $syntax.Permalink }}">
   {{ $style := resources.Get "style.css" | resources.Minify }}
   <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
-  <title>{{ .Title }}</title>
+  <title>Anthony Seure / {{ .Title }}</title>
 </head>
 
 <body class="grid grid-cols-12 mb-40 text-lg font-sans">

@@ -1,6 +1,7 @@
 ---
 title: "Hire me"
 menu: main
+description: "Learn how to contact me if you'd like to hire me as a teacher in engineering school or as a professional trainer for your software-engineering team."
 weight: 1
 ---
 
