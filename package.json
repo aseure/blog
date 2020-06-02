@@ -6,11 +6,11 @@
   "author": "Anthony Seure <anthony.seure@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build:css": "npx tailwindcss build assets/tailwind.css -o assets/style.css",
     "build:chroma": "hugo gen chromastyles --style=tango > assets/syntax.css",
+    "build:css": "npx tailwindcss build assets/tailwind.css -o assets/style.css",
     "watch:css": "watch 'yarn build:css' ./layouts/",
-    "build:hugo": "hugo",
-    "watch:hugo": "hugo serve",
+    "build:hugo": "./convert.sh && hugo",
+    "watch:hugo": "./convert.sh && hugo serve",
     "build": "yarn build:css && yarn build:chroma && yarn build:hugo",
     "serve": "concurrently --kill-others \"yarn watch:css\" \"yarn watch:hugo\"",
     "deploy": "rsync -e 'ssh -o \"StrictHostKeyChecking no\" -i ~/.ssh/digital_ocean' -avz --delete public/* anthony@aseure.fr:/home/anthony/blog.aseure.fr/"
