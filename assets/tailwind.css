@@ -31,6 +31,13 @@ main .chroma .err {
 
 main code {
     @apply bg-gray-200;
+    @apply text-sm;
+}
+
+@screen lg {
+    main code {
+        @apply text-base;
+    }
 }
 
 main blockquote {
