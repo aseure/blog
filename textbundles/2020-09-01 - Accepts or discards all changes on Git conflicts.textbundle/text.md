@@ -10,7 +10,7 @@ And, as always in tech, the answer is: _it depends_. It depends on whether you a
 
 When you are merging a branch, say `feat`, into the base branch on which you are currently working, say `master`, the command you would use is `git merge feat`. By doing so, git will produce a new commit on `master`. This commit will in effect be the top of the `master` branch, leaving the `feat` branch where it was. This may sound trivial but it has some importance.
 
-Now, let's imagine that your `feat` branch is conflicting with your base branch, and you would like to retain all the changes from `feat` no matter what. In that case, you can tell git to automatically deal with conflicts by accepting all `feat` changes with a `git merge -X theirs`. The extra _strategy option_ (`-X`/`--strategy-option`) we passed here indicates that all conflicts must be resolved by preferring the changes from the branch we are bringing in, in other words, _their_ changes.
+Now, let's imagine that your `feat` branch is conflicting with your base branch, and you would like to retain all the changes from `feat` no matter what. In that case, you can tell git to automatically deal with conflicts by accepting all `feat` changes with a `git merge -X theirs feat`. The extra _strategy option_ (`-X`/`--strategy-option`) we passed here indicates that all conflicts must be resolved by preferring the changes from the branch we are bringing in, in other words, _their_ changes.
 
 This should come to no surprise but you can get the opposite behaviour by preferring the changes from the base branch using the `-X ours` strategy option. In that case, because the changes of the currently checked out branch are preferred, those are considered as _our_ changes, as opposed to the changes from the branch we are bringing in.
 
@@ -22,7 +22,7 @@ Does it all make sense now? `ours` refers to the base branch while `theirs` corr
 
 In case you're wondering: no, git authors are not mad men who just want their users to suffer every time they use `rebase`. The real reason is consistency.
 
-Let's perform a rebase from our previous example using the `git rebase master` command (supposing we started from the `feat` branch) to understand why `ours` and `theirs` worked in oppositely.
+Let's perform a rebase from our previous example using the `git rebase master` command (supposing we started from the `feat` branch) to understand why `ours` and `theirs` work oppositely.
 
 When conflicts arise during a rebase, you would have to specify `-X theirs` to force git to resolve conflicts by applying `feat` branch changes. Conversely, if your goal is to resolve the conflicts by always using the changes from the base branch, you would need to use `-X ours`.
 
