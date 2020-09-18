@@ -3,11 +3,14 @@
   {{ range .Pages.GroupByDate "January 2006" }}
   <div class="my-4"></div>
 
-  <div class="flex flex-col lg:flex-row">
-    <h2 class="text-center lg:text-left mb-4 lg:mb-0 lg:w-3/12 font-bold text-2xl text-blue-800">{{ .Key }}</h2>
-    <ul class="text-center lg:text-left flex flex-col justify-around">
+  <div class="flex flex-col xl:flex-row">
+    <h2 class="text-center xl:text-left mb-4 xl:mb-0 xl:w-4/12 font-bold text-2xl text-blue-800">
+      <span>{{ index (split .Key " ") 0 }}</span>
+      <span>{{ index (split .Key " ") 1 }}</span>
+    </h2>
+    <ul class="text-center xl:text-left xl:w-8/12 flex flex-col justify-around">
       {{ range .Pages }}
-      <li>
+      <li class="mb-4 xl:pl-4 text-blue-800">
         <a class="underline text-blue-800" href="{{ .Permalink }}">{{ .Title }}</a>
       </li>
       {{ end }}
