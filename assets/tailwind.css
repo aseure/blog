@@ -41,7 +41,7 @@ main code {
 }
 
 main blockquote {
-    @apply border-l-8 border-blue-800 bg-blue-100 pl-8;
+    @apply border-l-8 border-blue-800 bg-blue-100 px-8;
 }
 
 main blockquote p {
