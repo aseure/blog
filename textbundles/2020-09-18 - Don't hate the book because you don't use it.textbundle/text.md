@@ -4,7 +4,7 @@ In a few months, I'll celebrate my fifth year as a professional - understand pai
 
 Today, I'd like to talk about [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8), a book written by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides, famously known as the _Gang of Four_. If you never read it: this is a fundamental programming book describing programming abstractions published in 1994. The date is essential here, but we'll come to that later.
 
-This book is recently being discussed by many due to [a recent tweet from Robert. C. Martin aka Uncle Bob](https://twitter.com/unclebobmartin/status/1306581616983183361). Long story short, telling a massive audience that book X is great, and treating people who consider it outdated as "foolish" does not end well.
+This book is recently being discussed by many, due to [a recent tweet from Robert. C. Martin aka Uncle Bob](https://twitter.com/unclebobmartin/status/1306581616983183361). Long story short, telling a massive audience that book X is great, and treating people who consider it outdated as "foolish" does not end well.
 
 While I disagree with the tone here, I'd like to focus on the negative comments which followed, including but not limited to:
 
