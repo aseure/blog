@@ -38,7 +38,7 @@ Here are my top picks from the book and why I chose them.
 
 To conclude, I'm not saying the book is not old, quite the opposite: you can feel it when it takes as examples from 90s user interfaces. I'm merely advocating that our industry and its workers have changed a lot in the last 30 years, dare I say even more than in any other industry. But this should not be an excuse to sweep away years of meticulous R&D and documentation, on which our modern tools still rely on nowadays, and the people behind it.
 
-Because a lot of people complained that they were never able to finish the book, here is an extract from the end, section "What to Except from Design Patterns", page 351:
+Because a lot of people complained that they were never able to finish the book, here is an extract from the end, section "What to Expect from Design Patterns", page 351:
 
 > It's possible to argue that this book hasn't accomplished much. After all, it doesn't present any algorithms or programming techniques that haven't been used before. [...] it just documents existing designs. You could conclude that it makes a reasonable tutorial, perhaps, but it certainly can't offer much to an experienced object-oriented designer.
 >
