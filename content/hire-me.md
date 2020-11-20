@@ -7,7 +7,7 @@ weight: 1
 
 Hello 👋
 
-I am **Anthony Seure**, software engineer at [Algolia](https://www.algolia.com/) in Paris, France. You can contact me by email at [anthony.seure@gmail.com](mailto:anthony.seure@gmail.com), and you can find me as @aseure on most social networks, such as [Twitter](https://twitter.com/aseure) and [Github](https://github.com/aseure), but also [LinkedIn](https://www.linkedin.com/in/anthony-seure-a3115364/).
+I am **Anthony Seure**, remote software engineer at [Aircall](https://aircall.io/), working from France. Previously, I worked for [Algolia](https://www.algolia.com/) in Paris, France. You can contact me by email at [anthony.seure@gmail.com](mailto:anthony.seure@gmail.com), and you can find me as @aseure on most social networks, such as [Twitter](https://twitter.com/aseure) and [Github](https://github.com/aseure), but also [LinkedIn](https://www.linkedin.com/in/anthony-seure-a3115364/).
 
 ## Hire me as a Sr. Software Engineer
 
