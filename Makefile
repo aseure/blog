@@ -12,7 +12,4 @@ serve:
 	hugo serve
 
 deploy: build
-    rsync -e 'ssh -o \"StrictHostKeyChecking no\" -i ~/.ssh/digital_ocean' \
-	      -avz                                                             \
-		  --delete public/*                                                \
-		  anthony@aseure.fr:/home/anthony/blog.aseure.fr/
+	rsync -e 'ssh -o StrictHostKeyChecking=no -i ~/.ssh/digital_ocean' -avz --delete public/* anthony@aseure.fr:/home/anthony/blog.aseure.fr/
