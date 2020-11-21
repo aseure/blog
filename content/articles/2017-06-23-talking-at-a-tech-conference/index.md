@@ -1,4 +1,7 @@
-# Talking at a Tech Conference
+---
+title: "Talking at a Tech Conference"
+date: "2017-06-23"
+---
 
 Developer is not always a speaking job. Of course, you discuss with your
 colleagues, about what they are working on, how they are doing, you have
@@ -6,7 +9,7 @@ meetings and discussions regarding your projects. But as a developer, you are
 rarely speaking with customers, direct users. This is even more true when
 you are working on infrastructure or on the backend.
 
-![](assets/on-stage.jpg)
+![](on-stage.jpg)
 
 ## From Paris classrooms to Amsterdam TechSummit
 
@@ -24,16 +27,16 @@ be good to have Algolia there for these reasons and I'd be happy to talk there"
 they are here to help.
 
 From 2013 to 2015, I was still a student. I was also teaching at my school to
-2\<sup\>nd\</sup\>, 4\<sup\>th\</sup\> and 5\<sup\>th\</sup\> CS students. It taught me a
-lot regarding public speaking and teamwork, as I was working with around 30
-schoolmates, few academic teachers and the school administration itself. I was
-also used to do presentation to academic researchers in the laboratory when I
-was part-time working. Then, I've did some talks regarding how we used to
-handle support at Algolia (we haven't any QA team as of today) and the
-challenges to maintain the Algolia Go API client. All of these were great
-experiences, I was speaking English or French in front of a tens of people
-(actually more than 100 students at my school) about both technical and
-non-technical subjects for various audiences.
+2\<sup\>nd\</sup\>, 4\<sup\>th\</sup\> and 5\<sup\>th\</sup\> CS students. It
+taught me a lot regarding public speaking and teamwork, as I was working with
+around 30 schoolmates, few academic teachers and the school administration
+itself. I was also used to do presentation to academic researchers in the
+laboratory when I was part-time working. Then, I've did some talks regarding
+how we used to handle support at Algolia (we haven't any QA team as of today)
+and the challenges to maintain the Algolia Go API client. All of these were
+great experiences, I was speaking English or French in front of a tens of
+people (actually more than 100 students at my school) about both technical
+and non-technical subjects for various audiences.
 
 So after nearly one year of work on the new log processing toolchain the
 occasion showed up to speak at an internal conference, I cannot say I was
@@ -65,8 +68,8 @@ actually prepared quite a lot of presentations in the past and I like spending
 time on it, building a story, making the slides and the schemas. Once the first
 draft is done, it's time to rehearse.
 
-![](assets/rehearsal-calendar.png)
-*Scheduling the rehearsals*
+![](rehearsal-calendar.png)
+_Scheduling the rehearsals_
 
 I did few rehearsals alone and two with my colleagues (thank you again for your
 time guys). It is really important to do it in front of people to let them tell
@@ -91,10 +94,9 @@ even tried some dance steps on Dance Dance Revolution machines!
 After a small breakfast, I arrived to the venue with few Algolia colleagues to
 install our booth and prepare the goodies. As everything was well-organized by
 Leaseweb, I just had to be on stage 10 minutes before the beginning of my talk
-to put on and try the microphone and *enjoy* as one of the organizers told me.
+to put on and try the microphone and _enjoy_ as one of the organizers told me.
 Overall, I was very happy to be there and I really thankful to Algolia for this
 opportunity. Last thing now is to re-watch my talk and improve on all the
 things that I'm doing wrong... Nearly one month later, I still haven't watch
 it. I know, I know, I'll have to do it... Eventually, it's painful. I'll
 [drop it here](https://www.youtube.com/watch?v=Y7qypy633dw) just in case.
-
