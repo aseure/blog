@@ -2,3 +2,4 @@ baseurl            = "/"
 languageCode       = "en-us"
 pygmentsUseClasses = true
 title              = "Anthony Seure"
+disableKinds       = ["taxonomy", "term"]
