@@ -1,21 +1,22 @@
 {{ define "main" }}
-<div class="flex flex-col">
+<main class="flex flex-col">
   {{ range .Pages.GroupByDate "January 2006" }}
-  <div class="my-4"></div>
 
   <div class="flex flex-col xl:flex-row">
-    <h2 class="text-center xl:text-left mb-4 xl:mb-0 xl:w-4/12 font-bold text-2xl text-blue-800">
+    <h2 class="no-underline text-center xl:text-left mb-4 xl:mb-0 xl:w-4/12 font-bold text-xl">
       <span>{{ index (split .Key " ") 0 }}</span>
       <span>{{ index (split .Key " ") 1 }}</span>
     </h2>
-    <ul class="text-center xl:text-left xl:w-8/12 flex flex-col justify-around">
+    <ul class="text-center list-none list-inside xl:text-left xl:w-8/12 flex flex-col justify-around">
       {{ range .Pages }}
-      <li class="mb-4 xl:pl-4 text-blue-800">
-        <a class="underline text-blue-800" href="{{ .Permalink }}">{{ .Title }}</a>
+      <li class="mb-2 xl:pl-4">
+        <a class="underline text-gray-600" href="{{ .Permalink }}">{{ .Title }}</a>
       </li>
       {{ end }}
     </ul>
   </div>
+
+  <div class="mb-4"></div>
   {{ end }}
-</div>
+</main>
 {{ end }}

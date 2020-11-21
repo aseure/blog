@@ -1,12 +1,12 @@
 {{ define "main" }}
-<div class="grid grid-cols-1 xl:grid-cols-2">
+<main class="grid grid-cols-1 xl:grid-cols-2">
 
   {{ range .Pages.GroupByDate "2006" }}
-  <h1 class="col-span-1 xl:col-span-2 text-center font-bold text-2xl text-blue-800 my-4">{{ .Key }}</h1>
+  <h1 class="col-span-1 xl:col-span-2 text-center font-bold text-xl my-4">{{ .Key }}</h1>
 
   {{ range .Pages }}
-  <div class="col-span-1 rounded bg-gray-200 text-center m-2 p-4 flex flex-col justify-between h-56">
-    <h2 class="font-bold text-blue-800">{{ .Title }}</h2>
+  <div class="col-span-1 rounded border-gray-600 border-2 text-center m-2 p-4 flex flex-col justify-between h-56">
+    <h2 class="font-bold no-underline">{{ .Title }}</h2>
 
     <div>
       <div>
@@ -23,15 +23,15 @@
 
     <div class="flex flex-row justify-around">
       {{ if (ne .Params.slides "") }}
-      <a class="text-gray-600 text-base" href="{{ .Params.slides }}">Slides</a>
+      <a class="" href="{{ .Params.slides }}">Slides</a>
       {{ end }}
       {{ if (ne .Params.recording "") }}
-      <a class="text-gray-600 text-base" href="{{ .Params.recording }}">Recording</a>
+      <a class="" href="{{ .Params.recording }}">Recording</a>
       {{ end }}
     </div>
 
   </div>
   {{ end }}
   {{ end }}
-</div>
+</main>
 {{ end }}
