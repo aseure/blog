@@ -1,4 +1,7 @@
-build: css html
+build: clean css html
+
+install:
+	yarn install
 
 html:
 	hugo --minify
